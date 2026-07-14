@@ -255,7 +255,7 @@ class SQLServer:
         outlook = win32.Dispatch('Outlook.Application')
         mail = outlook.CreateItem(0)
 
-        mail.To = "i.sukhovii@fora.ua"
+        mail.To = "m.papanov@fora.ua"
         mail.Subject = f"Звіт по {name_of_report} {month}.{year}"
 
         # таблиця аномалій

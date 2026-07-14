@@ -1,3 +1,4 @@
+
 from sqlalchemy import create_engine, text
 from sqlalchemy.types import Numeric, NVARCHAR, FLOAT
 import urllib
