@@ -66,6 +66,7 @@ class SQLServer:
 
     def labor(self):
         hist_table = "Business_Analytic.prod.labor"
+
         return prod_columns_archive.sql_labor_columns, prod_columns_archive.labor_columns, labor_104_105_sql, hist_table, prod_schemas.labor_sql_schema
 
     def costsrc(self):

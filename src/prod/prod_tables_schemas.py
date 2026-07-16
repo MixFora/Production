@@ -20,6 +20,17 @@ tariff_sql_schema = {
     "Tariff": Float(),
 }
 
+account_sql_schema = {
+    "filid": Integer(),
+    "account": Integer(),
+    "name": NVARCHAR(200),
+    "year": Integer(),
+    "month": Integer(),
+    "sum": Float(),
+    "share_TO": Float(),
+}
+
+
 labor_sql_schema = {
     "y": Integer(),
     "m": Integer(),

@@ -44,6 +44,10 @@ sql_labor_columns = [
     "y", "m", "filid", "hours", "cost_hour", "cost_labor"
 ]
 
+account_sql_list = [
+    "filid", "account", "name", "year", "month", "sum", "share_TO"
+]
+
 class ColumnsArchive:
     def __init__(self):
         self.fema_sql_dict = fema_sql_dict
@@ -54,3 +58,4 @@ class ColumnsArchive:
         self.tariff_column_names = tariff_column_names
         self.labor_columns = labor_columns
         self.sql_labor_columns = sql_labor_columns
+        self.account_sql_list = account_sql_list
