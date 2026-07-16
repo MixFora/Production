@@ -207,13 +207,13 @@ class SQLServer:
                         hist_vals = hist_id[cat].values
                         # ---- умова 1: вище за середнє по всіх магазинах за попередні місяці ----
                         avg_all = global_avg[cat]
-                        if avg_all != 0 and cur_val > avg_all * (1 + THRESHOLD_PCT):
+                        if avg_all != 0 and abs(cur_val) > abs(avg_all) * (1 + THRESHOLD_PCT):
                             reasons.append("вище середнього по всіх магазинах більше ніж вдвічі")
                             # ---- умова 2: зростання відносно власної історії магазину,
                             #                якщо всі 3 попередні місяці не нульові ----
                             if len(hist_vals) == 3 and all(v != 0 for v in hist_vals):
                                 hist_mean = hist_vals.mean()
-                                if hist_mean != 0 and (cur_val - hist_mean) / hist_mean > THRESHOLD_PCT:
+                                if hist_mean != 0 and abs(cur_val) > abs(hist_mean) * (1 + THRESHOLD_PCT):
                                     reasons.append("вище власної історії більше ніж вдвічі")
 
                     if reasons:
