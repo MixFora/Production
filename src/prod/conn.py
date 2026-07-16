@@ -77,6 +77,11 @@ class SQLServer:
         hist_table = "Business_Analytic.prod.costsMC"
         return prod_columns_archive.costsmc_sql_list, hist_table, prod_schemas.costsmc_sql_schema
 
+    def accounts(self):
+        hist_table = "Business_Analytic.prod.account"
+        return prod_columns_archive.account_sql_list, hist_table, prod_schemas.account_sql_schema
+
+
     def get_year_month(self, file_path):
         match = re.search(r'(\d{4})', file_path)
 
@@ -93,7 +98,7 @@ class SQLServer:
 
     def accountant_number_of_filial(self, engine=None):
         with engine.connect() as conn:
-            query = "SELECT  [id],[name],[AccountantNumber] FROM [FORAExperts].[dbo].[Filialparams]"
+            query = "SELECT  [id],[name],[AccountantNumber], MVZ FROM [FORAExperts].[dbo].[Filialparams]"
 
             df_filials = pd.read_sql(query, engine)
 
