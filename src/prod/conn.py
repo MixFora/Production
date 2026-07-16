@@ -241,8 +241,10 @@ class SQLServer:
                 anomalies_df[
                     "причина"] == "вище середнього по всіх магазинах більше ніж вдвічі, вище власної історії більше ніж вдвічі"
                 ]
-            print("\n⚠️ Знайдено аномалії:")
-            display(anomalies_df)
+            if not anomalies_df.empty:
+                print("\n⚠️ Знайдено аномалії:")
+                display(anomalies_df)
+
 
         else:
             anomalies_df = pd.DataFrame()

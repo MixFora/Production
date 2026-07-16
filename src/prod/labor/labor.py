@@ -11,7 +11,7 @@ import numpy as np
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 
-file_path = "labor_2604.xlsx"
+file_path = "labor_2606.xlsx"
 
 labor_role_columns = [
     "посада з годин", "Посада з зп", "depid", "Відділ"
@@ -203,7 +203,7 @@ sql_list_sumable = [x for x in sql_list if x not in ["filid", "depid", "y", "m",
 anomalies_df = conect.find_anomalies(year, month, main_df, hist_table, sql_list_sumable, groupby_columns=groupby_columns, THRESHOLD_PCT=1.0, engine=engine, year_col="y", month_col="m", avg_cols=avg_cols)
 conect.send_mail(anomalies_df, year, month, count_of_fema_unique_columns=[], missing_columns=[], duplicates=[], name_of_report="LABOR")
 
-conect.load_to_sql(main_df, year, month, table_name="labor_python_test", table_schema="prod", sql_schema=sql_schema, engine=engine, year_col="y", month_col="m")
+conect.load_to_sql(main_df, year, month, table_name="labor", table_schema="prod", sql_schema=sql_schema, engine=engine, year_col="y", month_col="m")
 
 # # 1. перевірити чи таблиця є
 # with engine.connect() as conn:

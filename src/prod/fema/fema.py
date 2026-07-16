@@ -180,7 +180,7 @@ df_final = (
 #         """
 
 # Завантаження в БД
-conect.load_to_sql(df_final, year, month, table_name="temp_python_test1", table_schema="prod", sql_schema=sql_schema,engine=engine)
+conect.load_to_sql(df_final, year, month, table_name="temp", table_schema="prod", sql_schema=sql_schema,engine=engine)
 
 # Визначаємо попередні 3 місяці (з урахуванням переходу через рік)
 # prev_periods = []

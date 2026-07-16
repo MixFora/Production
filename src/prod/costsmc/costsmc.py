@@ -41,7 +41,7 @@ groupby_columns.remove("month")
 anomalies_df = conect.find_anomalies(year, month, df, hist_table, sql_list_sumable, groupby_columns=groupby_columns, THRESHOLD_PCT=1.0, engine=engine)
 conect.send_mail(anomalies_df, year, month, count_of_fema_unique_columns=[], missing_columns=[], duplicates=[], name_of_report="COSTS MC")
 
-conect.load_to_sql(df, year, month, table_name="costsmc_python_test", table_schema="prod", sql_schema=sql_schema, engine=engine)
+conect.load_to_sql(df, year, month, table_name="costsmc", table_schema="prod", sql_schema=sql_schema, engine=engine)
 
 
 # # delete old data
